@@ -1,56 +1,79 @@
 
 import { Button } from "@/components/ui/button";
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 
 export const Hero = () => {
+  const navigate = useNavigate();
+  const { scrollY } = useScroll();
+  const opacity = useTransform(scrollY, [0, 300], [1, 0]);
+  const scale = useTransform(scrollY, [0, 300], [1, 0.8]);
+
   return (
-    <div className="relative min-h-[80vh] flex items-center justify-center overflow-hidden">
+    <div className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      {/* Background with subtle gradient and noise texture */}
       <div className="absolute inset-0 z-0">
-        <div className="absolute inset-0 bg-gradient-to-r from-purple-500/10 to-pink-500/10 backdrop-blur-3xl" />
+        <div 
+          className="absolute inset-0 bg-gradient-to-b from-white via-purple-50/30 to-pink-50/30"
+          style={{
+            backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%' height='100%' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")`,
+            opacity: 0.03
+          }}
+        />
       </div>
       
-      <div className="container mx-auto px-4 z-10">
-        <div className="text-center max-w-3xl mx-auto">
-          <motion.h1 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-5xl md:text-6xl font-bold text-gray-900 mb-6"
-          >
-            Find Your Perfect
-            <span className="text-primary block">Furry Friend</span>
-          </motion.h1>
-          
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-xl text-gray-600 mb-8"
-          >
-            Connect with adorable pets waiting for their forever homes. Your new best friend is just a click away.
-          </motion.p>
-          
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            className="flex flex-wrap gap-4 justify-center"
-          >
-            <Button
-              size="lg"
-              className="bg-primary hover:bg-primary/90 text-white px-8 py-6 text-lg rounded-full transition-all duration-300 transform hover:scale-105"
+      <div className="relative w-full">
+        <motion.div 
+          className="container mx-auto px-4 z-10"
+          style={{ opacity, scale }}
+        >
+          <div className="text-center max-w-4xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
+              className="mb-8"
             >
-              Find a Pet
-            </Button>
-            <Button
-              size="lg"
-              variant="outline"
-              className="px-8 py-6 text-lg rounded-full border-2 hover:bg-secondary/50 transition-all duration-300 transform hover:scale-105"
+              <h1 className="text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight mb-6">
+                <span className="bg-clip-text text-transparent bg-gradient-to-r from-primary via-purple-600 to-pink-600">
+                  Find Your Perfect
+                </span>
+                <br />
+                <span className="text-gray-900">FurEverFriend</span>
+              </h1>
+              
+              <p className="text-xl md:text-2xl text-gray-600 max-w-2xl mx-auto font-light">
+                Connect with adorable pets waiting for their forever homes.
+                <span className="hidden md:inline"> Your new best friend is just a click away.</span>
+              </p>
+            </motion.div>
+            
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.5 }}
+              className="flex flex-col md:flex-row gap-4 justify-center items-center"
             >
-              Learn More
-            </Button>
-          </motion.div>
-        </div>
+              <Button
+                size="lg"
+                className="bg-primary hover:bg-primary/90 text-white px-8 py-6 rounded-full text-lg transition-all duration-300 transform hover:scale-105 hover:shadow-xl"
+                onClick={() => navigate('/pet-match')}
+              >
+                Find a Pet
+              </Button>
+              <Button
+                size="lg"
+                variant="outline"
+                className="px-8 py-6 rounded-full text-lg border-2 hover:bg-gray-50 transition-all duration-300"
+                onClick={() => navigate('/about')}
+              >
+                Learn More
+              </Button>
+            </motion.div>
+          </div>
+        </motion.div>
+
+
       </div>
     </div>
   );
