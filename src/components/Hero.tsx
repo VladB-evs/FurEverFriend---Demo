@@ -6,8 +6,8 @@ import { useNavigate } from "react-router-dom";
 export const Hero = () => {
   const navigate = useNavigate();
   const { scrollY } = useScroll();
-  const opacity = useTransform(scrollY, [0, 300], [1, 0]);
-  const scale = useTransform(scrollY, [0, 300], [1, 0.8]);
+  const opacity = useTransform(scrollY, [0, 400], [1, 0]);
+  const scale = useTransform(scrollY, [0, 400], [1, 0.85]);
 
   return (
     <div className="relative min-h-screen flex items-center justify-center overflow-hidden">
@@ -31,7 +31,7 @@ export const Hero = () => {
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
+              transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
               className="mb-8"
             >
               <h1 className="text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight mb-6">
@@ -51,7 +51,7 @@ export const Hero = () => {
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.5 }}
+              transition={{ duration: 1, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
               className="flex flex-col md:flex-row gap-4 justify-center items-center"
             >
               <Button
