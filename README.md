@@ -64,6 +64,7 @@ bun run build
 
 The built files will be in the `dist` directory.
 
+<<<<<<< HEAD
 ## Project Structure
 
 ```
@@ -84,6 +85,16 @@ src/
 4. Push to the branch (`git push origin feature/amazing-feature`)
 5. Open a Pull Request
 
+=======
+## Contributing
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add some amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+>>>>>>> 46fa8904b52aea9443e01a329ee924aacc07e310
 ## License
 
 This project is licensed under the MIT License - see the LICENSE file for details.
