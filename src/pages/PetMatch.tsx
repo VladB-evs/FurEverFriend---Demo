@@ -5,7 +5,7 @@ import { Heart, X, Info } from 'lucide-react';
 import { Card } from '@/components/ui/card';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from '@/components/ui/dialog';
 import { Badge } from '@/components/ui/badge';
-import { petfinderService } from '@/services/petfinder';
+import { petfinderService } from '@/services/petfinder.ts';
 import { Footer } from '@/components/Footer';
 
 interface Pet {
