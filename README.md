@@ -1,69 +1,83 @@
-# Welcome to your Lovable project
+# Furry Companion Finder 🐾
 
-## Project info
+A modern web application that helps connect people with adoptable pets using the Petfinder API. Find your perfect furry companion with our intuitive and user-friendly interface.
 
-**URL**: https://lovable.dev/projects/e1a9ec38-f589-4312-8b74-edc287b3df1b
+## Features
 
-## How can I edit this code?
+- **Featured Pets**: Browse through a curated list of adoptable pets
+- **Pet Matching**: Find pets that match your preferences
+- **Detailed Pet Profiles**: View comprehensive information about each pet
+- **Responsive Design**: Works seamlessly on desktop and mobile devices
 
-There are several ways of editing your application.
+## Tech Stack
 
-**Use Lovable**
+- React + TypeScript
+- Vite
+- Tailwind CSS
+- Petfinder API
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/e1a9ec38-f589-4312-8b74-edc287b3df1b) and start prompting.
+## Prerequisites
 
-Changes made via Lovable will be committed automatically to this repo.
+- Node.js (v14 or higher)
+- npm or bun package manager
+- Petfinder API credentials
 
-**Use your preferred IDE**
+## Getting Started
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
+1. Clone the repository:
+```bash
+git clone https://github.com/yourusername/furry-companion-finder.git
+cd furry-companion-finder
 ```
 
-**Edit a file directly in GitHub**
+2. Install dependencies:
+```bash
+npm install
+# or
+bun install
+```
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+3. Create a `.env` file in the root directory with your Petfinder API credentials:
+```env
+VITE_PETFINDER_API_KEY="your_api_key"
+VITE_PETFINDER_API_SECRET="your_api_secret"
+```
 
-**Use GitHub Codespaces**
+4. Start the development server:
+```bash
+npm run dev
+# or
+bun dev
+```
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+5. Open your browser and navigate to `http://localhost:5173`
 
-## What technologies are used for this project?
+## Building for Production
 
-This project is built with .
+To create a production build:
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+```bash
+npm run build
+# or
+bun run build
+```
 
-## How can I deploy this project?
+The built files will be in the `dist` directory.
 
-Simply open [Lovable](https://lovable.dev/projects/e1a9ec38-f589-4312-8b74-edc287b3df1b) and click on Share -> Publish.
+## Contributing
 
-## I want to use a custom domain - is that possible?
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add some amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
 
-We don't support custom domains (yet). If you want to deploy your project under your own domain then we recommend using Netlify. Visit our docs for more details: [Custom domains](https://docs.lovable.dev/tips-tricks/custom-domain/)
+## License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+## Acknowledgments
+
+- [Petfinder API](https://www.petfinder.com/developers/) for providing access to their database of adoptable pets
+- [Tailwind CSS](https://tailwindcss.com/) for the utility-first CSS framework
+- [Vite](https://vitejs.dev/) for the fast development environment
