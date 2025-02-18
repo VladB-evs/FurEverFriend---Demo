@@ -117,7 +117,7 @@ export const PetMatch = () => {
   }
 
   return (
-    <div className="min-h-screen pt-16 flex flex-col bg-gradient-to-br from-purple-500/5 via-pink-500/5 to-purple-500/5">
+    <div className="min-h-screen pt-16 flex flex-col bg-[#FBFBFD]">
       <div 
         className="absolute inset-0 opacity-5 pointer-events-none"
         style={{
@@ -131,11 +131,11 @@ export const PetMatch = () => {
           animate={{ opacity: 1, y: 0 }}
           className="text-center mb-8"
         >
-          <h1 className="text-4xl md:text-5xl font-black mb-2 bg-gradient-to-r from-primary to-purple-600 bg-clip-text text-transparent">
-            Find Your Perfect Match
+          <h1 className="text-[56px] leading-tight font-semibold mb-4 text-[#1D1D1F]">
+            Find Your Perfect Match.
           </h1>
-          <p className="text-gray-600 text-base md:text-lg">
-            Swipe through potential companions and find your furever friend
+          <p className="text-[#86868B] text-2xl font-medium max-w-2xl mx-auto">
+            Your new best friend is just a swipe away.
           </p>
         </motion.div>
 
@@ -173,19 +173,19 @@ export const PetMatch = () => {
                   exit={{ opacity: 0, rotateY: 20, x: -100 }}
                   transition={{ type: 'spring', stiffness: 300, damping: 25 }}
                 >
-                  <Card className="overflow-hidden rounded-2xl shadow-[0_20px_60px_-15px_rgba(0,0,0,0.15)] hover:shadow-[0_20px_70px_-15px_rgba(0,0,0,0.2)] transition-all duration-500">
+                  <Card className="overflow-hidden rounded-[30px] shadow-[0_20px_60px_-15px_rgba(0,0,0,0.08)] hover:shadow-[0_30px_80px_-15px_rgba(0,0,0,0.12)] transition-all duration-500 border-0">
                     <div className="relative aspect-[4/5]">
                       <img
                         src={currentPet.image}
                         alt={currentPet.name}
                         className="w-full h-full object-cover transform transition-transform duration-700 hover:scale-105"
                       />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent">
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent backdrop-blur-[2px]">
                         <div className="absolute bottom-0 left-0 right-0 p-8">
                           <motion.h2 
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
-                            className="text-4xl font-bold text-white mb-3"
+                            className="text-5xl font-medium text-white mb-3 tracking-tight"
                           >
                             {currentPet.name}
                           </motion.h2>
@@ -195,10 +195,10 @@ export const PetMatch = () => {
                             transition={{ delay: 0.2 }}
                             className="flex flex-wrap gap-2 mb-2"
                           >
-                            <Badge variant="secondary" className="bg-white/20 backdrop-blur-sm text-white px-3 py-1">
+                            <Badge variant="secondary" className="bg-white/30 backdrop-blur-md text-white px-4 py-1.5 rounded-full text-sm font-medium">
                               {currentPet.age}
                             </Badge>
-                            <Badge variant="secondary" className="bg-white/20 backdrop-blur-sm text-white px-3 py-1">
+                            <Badge variant="secondary" className="bg-white/30 backdrop-blur-md text-white px-4 py-1.5 rounded-full text-sm font-medium">
                               {currentPet.breed}
                             </Badge>
                           </motion.div>
